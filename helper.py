@@ -5,7 +5,7 @@ import numpy as np
 def get_preds(model, X, clf_thres=.5):
     """Performs binary classification based on the chosen probability/confidence level
     (clf_thres). For example, clf_thres=.9 means the model will predict category 1 only
-    if it is at least 90% confident and category 2 otherwise."""
+    if it is at least 90% confident, else category 2."""
     y_pred = model.predict_proba(X)
     return np.array([0 if y[0] >= clf_thres else 1 for y in y_pred])
 
@@ -28,8 +28,8 @@ def score_model(y_true, y_pred, round_to=4, output='print'):
         
 #give us a running list of model performances with room for notes
 def score_keeper(model_name, model_score, performance_list, score_note=None):
-    score_model = ['model type'] = model_name
-    score_note = ['score notes'] = score_note
+    #score_model = ['model type'] = model_name
+    #score_note = ['score notes'] = score_note
     if not any(d['model_name'] == 'model_type' for d in performance_list):
         performance_list.append(score_model)
     

@@ -18,3 +18,7 @@ def human_readify(df):
                 df[col].replace(row[0], row[1])
                 
     return df
+
+
+def score(model, X_test):
+    model.predict_proba(X_test)

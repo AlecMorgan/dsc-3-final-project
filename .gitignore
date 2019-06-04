@@ -4,4 +4,4 @@ __pycache__
 *.db
 *.pytest_cache
 # To keep the oversized files off GitHub
-data
+/data/
